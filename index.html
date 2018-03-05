@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Employee Data Search</title>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+  
+</head>
+<body>
+
+  <!--// TITLE //-->
+  
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+      <div class="container">
+        <h1 class="display-4">Train Time is Anytime!</h1>
+      </div>
+    </div>
+
+    <!--// Train schedule table  //-->
+
+    <div class="card mb-4">
+      <div class="card-header bg-dark text-white">
+        Current Train Schedule
+      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Train Name</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Frequency (min)</th>
+            <th scope="col">Next Arrival</th>
+            <th scope="col">Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="name-js">Trenton Express</td>
+            <td id="destination-js">Trenton</td>
+            <td id="frequency-js">25</td>
+            <td id="nextarrival-js">05:35 PM</td>
+            <td id="minutesaway-js">10</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--// FORM //-->
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header bg-dark text-white">
+          Add Train
+        </div>
+        <div>
+          <form>
+            <div class="form-group">
+              <div class="col">
+                <label for="name">Train Name</label>
+                <input id="name-input" type="text" class="form-control searchname" placeholder="">
+              </div>
+              <br>
+              <div class="col">
+                <label for="destination-input">Destination</label>
+                <input id="destination-input" type="text" class="form-control destination" placeholder="">
+              </div>
+              <br>
+              <div class="col">
+                <label for="firsttrain-input">First Train Time (HH:mm - military time)</label>
+                <input id="firsttrain-input" type="text" class="form-control firsttrain" placeholder="">
+              </div>
+              <br>
+              <div class="col">
+                <label for="frequency-input">Frequency (min)</label>
+                <input id="frequency" type="text" class="form-control frequency" placeholder="">
+              </div>
+            </div>
+            <button id="submit" type="submit" class="btn btn-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="./javascript/app.js"></script>
+  
+</body>
+</html>
