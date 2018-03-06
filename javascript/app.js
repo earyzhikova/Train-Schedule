@@ -35,33 +35,38 @@
 
       
       // collect values
-      var dbName = name.val();
-      var dbDestination = destination.val();
-      var dbFirsttrain = firstTrain.val();
-      var dbFrequency = frequency.val();
+      var dbName = name;
+      var dbDestination = destination;
+      var dbFirsttrain = firstTrain;
+      var dbFrequency = frequency;
 
-console.log(dbName);
-console.log(dbDestination);
-console.log(dbFirsttrain);
-console.log(dbFrequency);
+      // Push new train object to firebase db
+      db.ref().push({
+        name: dbName,
+        destination: dbDestination,
+        firstTrain: dbFirsttrain,
+        frequency: dbFrequency
+      });
 
-});
+
+      console.log(dbName);
+      console.log(dbDestination);
+      console.log(dbFirsttrain);
+      console.log(dbFrequency);
+
       // Empty input fields in browser
       $("#name-input").val("");
       $("#destination-input").val("");
       $("#firsttrain-input").val("");
       $("#frequency-input").val("");
 
-      // Push new train object to firebase db
-      database.ref().push(){
-        name: dbName,
-        destination: dbDestination,
-        firstTrain: dbFirsttrain,
-        frequency: dbFrequency
-      };
+      });
 
+
+
+      
       // Firebase event for adding trains to the database and a row in HTML when a user addds an entry 
-      database.ref().on("child-added", function(childSnapshot, prevChildKey) {
+      db.ref().on("child_added", function(childSnapshot, prevChildKey) {
         console.log(childSnapshot.val());
 
         // store into a variable
@@ -69,9 +74,9 @@ console.log(dbFrequency);
         var trDestination = childSnapshot.val().destination;
         var trFirsttrain = childSnapshot.val().firstTrain;
         var trFrequency = childSnapshot.val().frequency;
-      });
-//new arrival and minutes away
-    
+
+         //new arrival and minutes away
+      var tFrequency = trFrequency;
 
     // First Time (pushed back 1 year to make sure it comes before current time)
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
@@ -94,7 +99,14 @@ console.log(dbFrequency);
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
     // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("LT");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
   
   
+     
+
+      $("#trainRow > tbody").append("<tr><td>" + trName + "</td><td>" + trDestination + "</td><td>" +
+  trFrequency + "</td><td>" + nextTrain + "</td><td>" + tMinutesTillTrain + "</td><td>");
+
+       });
+   

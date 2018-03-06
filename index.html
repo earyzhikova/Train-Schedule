@@ -28,7 +28,7 @@
       <div class="card-header bg-dark text-white">
         Current Train Schedule
       </div>
-      <table class="table table-sm">
+      <table class="table table-sm" id="trainRow">
         <thead>
           <tr>
             <th scope="col">Train Name</th>
@@ -40,11 +40,11 @@
         </thead>
         <tbody>
           <tr>
-            <td id="name-js">Trenton Express</td>
-            <td id="destination-js">Trenton</td>
-            <td id="frequency-js">25</td>
-            <td id="nextarrival-js">05:35 PM</td>
-            <td id="minutesaway-js">10</td>
+            <td id="name-js"></td>
+            <td id="destination-js"></td>
+            <td id="frequency-js"></td>
+            <td id="nextarrival-js"></td>
+            <td id="minutesaway-js"></td>
             </tr>
         </tbody>
       </table>
@@ -66,18 +66,18 @@
               </div>
               <br>
               <div class="col">
-                <label for="destination-input">Destination</label>
+                <label for="destination">Destination</label>
                 <input id="destination-input" type="text" class="form-control destination" placeholder="">
               </div>
               <br>
               <div class="col">
-                <label for="firsttrain-input">First Train Time (HH:mm - military time)</label>
+                <label for="firsttrain">First Train Time (HH:mm - military time)</label>
                 <input id="firsttrain-input" type="text" class="form-control firsttrain" placeholder="">
               </div>
               <br>
               <div class="col">
-                <label for="frequency-input">Frequency (min)</label>
-                <input id="frequency" type="text" class="form-control frequency" placeholder="">
+                <label for="frequency">Frequency (min)</label>
+                <input id="frequency-input" type="text" class="form-control frequency" placeholder="">
               </div>
             </div>
             <button id="submit" type="submit" class="btn btn-dark">Submit</button>
@@ -93,6 +93,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="./javascript/app.js"></script>
   
 </body>
